@@ -1,4 +1,4 @@
-# ThinkMachine
+# ThinkMachine [![Build Status](https://travis-ci.org/Wellington475/ThinkMachine.svg?branch=master)](https://travis-ci.org/Wellington475/ThinkMachine)
 Module for tools and algorithm to Data Science.
 ____
 ThinkMachine is a set of tools and algorithms to facilitate the work of common data area Sciences tasks. It is based on a number of studies related to data science was by own creator.
