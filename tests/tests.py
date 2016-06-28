@@ -63,7 +63,7 @@ class ID3Test(unittest.TestCase):
 
 	def test_entropy(self):
 		ent = self.id3.entropy(self.data)
-		self.assertTrue(isinstance(ent, int))
+		self.assertTrue(isinstance(ent, float))
 
 if __name__ == '__main__':
     unittest.main()
