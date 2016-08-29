@@ -3,6 +3,48 @@ Module for tools and algorithm to Data Science.
 ____
 ThinkMachine is a set of tools and algorithms to facilitate the work of common data area Sciences tasks. It is based on a number of studies related to data science was by own creator.
 
+#### Linear classifier:
+
+Perceptron is an algorithm based on neural networks, heavily used for binary classification. He could solve any linearly solvable problem.
+
+```python
+from thinkmachine import PerceptronLinear
+# OR      inputs   expected
+dataset = [([1, 1],   1),
+       ([1, 0],   1),
+       ([0, 1],   1),
+       ([0, 0],   0)]
+
+p = PerceptronLinear(learning_rate=0.5) 
+p.train(dataset)
+print("Expected: "+str(dataset[0][1])+", Result: "+str(p.perceive([1, 1])))
+```
+#### Output:
+```
+Expected: 1, Result: 1
+```
+
+### Graph of errors
+```python
+from thinkmachine import PerceptronLinear
+import matplotlib.pyplot as plt
+
+# OR      inputs   expected
+dataset = [([1, 1],   1),
+       ([1, 0],   1),
+       ([0, 1],   1),
+       ([0, 0],   0)]
+
+p = PerceptronLinear(learning_rate=0.5) 
+p.train(dataset)
+
+plt.plot(range(1, len(p.errors)+1), p.errors, marker='*')
+plt.xlabel('Interações')
+plt.ylabel('Niveis de erro')
+plt.show()
+
+```
+
 #### Decision Tree:
 
 ```python
@@ -19,8 +61,8 @@ id3.load_sample()
 file = open('data_set/sample.csv')
 
 for line in file:
-	line = line.strip("\r\n")
-	data.append(line.split(','))
+  line = line.strip("\r\n")
+  data.append(line.split(','))
 
 attributes = data[0]
 data.remove(attributes)
@@ -122,8 +164,8 @@ This project is licensed under the MIT License. This means you can use and modif
 
 ### Development
 
-	$ git clone https://github.com/Wellington475/ThinkMachine
-	$ pip install -r requirements.txt
-	$ nosetests
+  $ git clone https://github.com/Wellington475/ThinkMachine
+  $ pip install -r requirements.txt
+  $ nosetests
 
-	
+  
